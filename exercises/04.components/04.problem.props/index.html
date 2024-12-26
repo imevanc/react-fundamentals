@@ -16,12 +16,15 @@
 			}
 
 			// 🐨 accept the right props in the Calculator component here
-			function Calculator() {
+			function Calculator({left, operator, right}) {
 				// 💰 you can get the result with: operations[operator](left, right)
 				return (
 					<div>
 						{/* 🐨 render the equation and its result here */}
 						{/* 💰 open the final version in the app if you're unsure */}
+						<code>
+							{left} {operator} {right} = <output>{operations[operator](left, right)}</output>
+						</code>
 					</div>
 				)
 			}
