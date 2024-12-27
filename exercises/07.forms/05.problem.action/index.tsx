@@ -1,23 +1,19 @@
 import { createRoot } from 'react-dom/client'
 
 function App() {
+	const logFormData = (formData: FormData) => {
+		console.log(Object.fromEntries(formData))
+	}
 	// 🐨 create a function called logFormData which accepts a FormData object
 	// 🐨 console.log the FormData object like we do in the current onSubmit handler
 	return (
 		<form
 			// 🐨 replace the string "api/onboarding" with the logFormData function
-			action="api/onboarding"
+			action={logFormData}
 			// 💣 delete the rest of these props
 			//   💯 React has a warning if you leave method and encType around once
 			//   you make the action a function. Feel free to check out what that
 			//   warning says before removing them.
-			method="POST"
-			encType="multipart/form-data"
-			onSubmit={event => {
-				event.preventDefault()
-				const formData = new FormData(event.currentTarget)
-				console.log(Object.fromEntries(formData))
-			}}
 		>
 			<div>
 				<label htmlFor="usernameInput">Username:</label>
