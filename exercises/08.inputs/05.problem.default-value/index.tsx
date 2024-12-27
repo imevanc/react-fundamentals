@@ -4,13 +4,18 @@ function App() {
 	function logFormData(formData: FormData) {
 		console.log(Object.fromEntries(formData))
 	}
+
 	return (
 		<form action={logFormData}>
 			<input type="hidden" name="orgId" value="123" />
 			<div>
 				<label htmlFor="accountTypeSelection">Account Type:</label>
 				{/* 🐨 set the default value to "student" */}
-				<select id="accountTypeSelection" name="accountType">
+				<select
+					id="accountTypeSelection"
+					name="accountType"
+					defaultValue="student"
+				>
 					<option value="">--Please select an option--</option>
 					<option value="admin">Admin</option>
 					<option value="teacher">Teacher</option>

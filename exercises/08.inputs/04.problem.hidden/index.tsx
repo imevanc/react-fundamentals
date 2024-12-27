@@ -4,9 +4,11 @@ function App() {
 	function logFormData(formData: FormData) {
 		console.log(Object.fromEntries(formData))
 	}
+
 	return (
 		<form action={logFormData}>
 			{/* 🐨 add a hidden input with the name "orgId" and the value "123" */}
+			<input type="hidden" name="orgId" value="123" />
 			<div>
 				<label htmlFor="accountTypeSelection">Account Type:</label>
 				<select id="accountTypeSelection" name="accountType">

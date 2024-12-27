@@ -4,6 +4,7 @@ function App() {
 	function logFormData(formData: FormData) {
 		console.log(Object.fromEntries(formData))
 	}
+
 	return (
 		<form action={logFormData}>
 			<div>
@@ -26,8 +27,15 @@ function App() {
 				<label htmlFor="colorInput">Favorite Color:</label>
 				<input id="colorInput" name="color" type="color" />
 			</div>
+
 			{/* 🐨 add a checkbox named "waiver" with the label "Waiver Signed" */}
 			{/* 💰 put the <input> inside the <label> */}
+			<div>
+				<label>
+					<input name="waiver" type="checkbox" />
+					Waiver Signed
+				</label>
+			</div>
 			<div>
 				<label htmlFor="startDateInput">Start Date:</label>
 				<input id="startDateInput" name="startDate" type="date" />

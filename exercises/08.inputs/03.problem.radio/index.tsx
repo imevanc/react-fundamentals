@@ -4,6 +4,7 @@ function App() {
 	function logFormData(formData: FormData) {
 		console.log(Object.fromEntries(formData))
 	}
+
 	return (
 		<form action={logFormData}>
 			<div>
@@ -38,6 +39,19 @@ function App() {
 			</div>
 			{/* 🐨 add a fieldset with the legend "Visibility" */}
 			{/* 🐨 add two radio buttons for public/private options for the name "visibility" */}
+			<div>
+				<fieldset>
+					<legend>Visibility</legend>
+					<label>
+						<input name="visibility" type="radio" value="public" />
+						Public
+					</label>
+					<label>
+						<input name="visibility" type="radio" value="private" />
+						Private
+					</label>
+				</fieldset>
+			</div>
 			<div>
 				<label>
 					<input name="waiver" type="checkbox" />
