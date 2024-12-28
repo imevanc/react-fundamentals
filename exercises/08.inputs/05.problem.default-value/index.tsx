@@ -34,7 +34,14 @@ function App() {
 			<div>
 				<label htmlFor="ageInput">Age:</label>
 				{/* 🐨 set the default value to 18 */}
-				<input id="ageInput" name="age" type="number" min="0" max="200" />
+				<input
+					defaultValue={18}
+					id="ageInput"
+					name="age"
+					type="number"
+					min="0"
+					max="200"
+				/>
 			</div>
 			<div>
 				<label htmlFor="photoInput">Photo:</label>
@@ -43,13 +50,18 @@ function App() {
 			<div>
 				<label htmlFor="colorInput">Favorite Color:</label>
 				{/* 🐨 set the default value to #002E5D */}
-				<input id="colorInput" name="color" type="color" />
+				<input
+					defaultValue="#002E5D"
+					id="colorInput"
+					name="color"
+					type="color"
+				/>
 			</div>
 			<fieldset>
 				<legend>Visibility:</legend>
 				<label>
 					{/* 🐨 set the default value to "Public" */}
-					<input name="visibility" type="radio" value="public" />
+					<input defaultChecked name="visibility" type="radio" value="public" />
 					Public
 				</label>
 				<label>
@@ -60,14 +72,19 @@ function App() {
 			<div>
 				<label>
 					{/* 🐨 set the default value to checked */}
-					<input name="waiver" type="checkbox" />
+					<input name="waiver" type="checkbox" defaultChecked />
 					Waiver Signed
 				</label>
 			</div>
 			<div>
 				{/* 🐨 set the default value to today */}
 				<label htmlFor="startDateInput">Start Date:</label>
-				<input id="startDateInput" name="startDate" type="date" />
+				<input
+					defaultValue={new Date().toISOString().split('T')[0]}
+					id="startDateInput"
+					name="startDate"
+					type="date"
+				/>
 			</div>
 			<button type="submit">Submit</button>
 		</form>
